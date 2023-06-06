@@ -11,7 +11,9 @@ export const getRandom = createAsyncThunk(
 export const randomSlice = createSlice({
     name: 'random',
     initialState: {
-        random: [],
+        random: {
+            results: [],
+        },
         loading: false
     },
     reducers:{

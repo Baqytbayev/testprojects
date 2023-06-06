@@ -9,17 +9,29 @@ const RandomGet = () => {
     const randoms = useSelector(state => state.random.random.results)
     console.log(randoms)
     const [find, setFind] = useState('')
+    const [sort, setSort] = useState(false)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getRandom())
-    }, [])
+    }, [dispatch])
     const handleRefresh = () => {
         dispatch(getRandom());
     };
     const handleFind = (event) => {
         setFind(event.target.value)
     }
-    const findRandom = randoms.filter((random) => random.name.first.toLowerCase().includes(find.toLowerCase()))
+    const handleSort = () => {
+        setSort(!sort)
+    }
+    let findRandom = randoms.filter((random) =>
+        random.name.first.toLowerCase().includes(find.toLowerCase())
+    );
+    if (sort) {
+        findRandom = findRandom.sort((a, b) =>
+            a.name.first.localeCompare(b.name.first)
+        );
+    }
+
     return (
         <div className={'info'}>
             <form onChange={handleFind}>
@@ -31,7 +43,10 @@ const RandomGet = () => {
                 />
                 <button className={'findButton'}>Find</button>
             </form>
-            <button className={'button'} onClick={handleRefresh}>Refresh</button>
+            <div className={'divOfButton'}>
+                <button className={'button'} onClick={handleSort}>Sort</button>
+                <button className={'button'} onClick={handleRefresh}>Refresh</button>
+            </div>
             {findRandom.map((random, i) => (
                 <Random
                     key={i}

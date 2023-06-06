@@ -6,7 +6,7 @@ const Random =(props) => {
     return (
         <div className={'info'}>
             <div className={'oneInfo'}>
-                <img className={'image'} src={props.image} placeholder={props.image}/>
+                <img className={'image'} src={props.image} alt={props.image} placeholder={props.image}/>
                 <h2 className={'text'}>{props.text}</h2>
             </div>
         </div>
