@@ -1,0 +1,54 @@
+.button {
+    margin: 25px 15px;
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: pink;
+}
+
+.button:focus {
+    outline: none;
+}
+.form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.findButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.findButton:hover {
+    background-color: pink;
+}
+
+.findButton:focus {
+    outline: none;
+}
+.divOfButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
